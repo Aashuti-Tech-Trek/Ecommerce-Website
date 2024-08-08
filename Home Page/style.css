@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #2c3e50;     /* Dark blue-gray */
+  --secondary-color: #ecf0f1;   /* Light gray */
+  --accent-color: #e67e22;      /* Muted orange */
+  --text-color: #333333;        /* Dark gray for text */
+  --light-text: #ffffff;        /* White for text on dark backgrounds */
+  --hover-color: #3498db;       /* Light blue for hover effects */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+.header {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-item a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+    color: var(--accent-color);
+}
+
+.logo-item {
+    flex: 1;
+}
+
+.logo {
+    height: 59px;
+    width: auto;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-box {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--primary-color);
+    width: 250px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-box:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--light-text);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.banner-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(44, 62, 80, 0.7);
+    color: var(--light-text);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.bn:hover {
+    background-color: rgba(44, 62, 80, 0.9);
+}
+
+.fas {
+    font-size: 24px;
+}
+
+.icon-link {
+    color: var(--light-text);
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+    color: var(--accent-color);
+}
+
+.product-category-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.shop-by-click {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-text);
+    padding: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-by-click:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-category-img {
+    width: 100%;
+    height: 200px;
+    object-fit: scale-down;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.shop-btn {
+    margin-top: 10px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    color: var(--light-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.shop-btn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.info {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 20px;
+    color: var(--primary-color);
+}
+
+.footer {
+    width: 100%;
+    height: 400px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
