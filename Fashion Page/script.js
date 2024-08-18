@@ -38,6 +38,8 @@ sortBtns.forEach((btn) => {
     displayFashionProducts(sortedProducts);
   });
 });
+
+
 document.querySelector('.toggle-size-chart-btn').addEventListener('click', function() {
   const sizeChart = document.querySelector('.size-chart');
   sizeChart.style.display = sizeChart.style.display === 'none' || sizeChart.style.display === '' ? 'block' : 'none';
@@ -58,7 +60,6 @@ function updateCartQuantity(quantity) {
   }
 }
 
-// Handle "Add to Cart" button clicks
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('add-to-cart-button')) {
     cartQuantity++;
@@ -69,8 +70,63 @@ document.addEventListener('click', function (e) {
     }, 1500);
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const shoppingCartItems = JSON.parse(localStorage.getItem('shoppingCartItems')) || [];
+  updateCartInfo(shoppingCartItems);
+});
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('add-to-cart-button')) {
+    const productContainer = e.target.closest('.product-container');
+    const productName = productContainer.querySelector('.product-name').textContent;
+    const productPrice = productContainer.querySelector('.product-price').textContent;
+    const productId = productContainer.dataset.productId; // Assuming you have a data-product-id attribute
 
+    let shoppingCartItems = JSON.parse(localStorage.getItem('shoppingCartItems')) || [];
+    
+    shoppingCartItems.push({ 
+      id: productId,
+      name: productName, 
+      price: parseFloat(productPrice.replace('Rs', '').trim())
+    });
+    
+    localStorage.setItem('shoppingCartItems', JSON.stringify(shoppingCartItems));
 
+    updateShoppingCartQuantity(shoppingCartItems.length);
+
+    console.log('Items in cart:', JSON.parse(localStorage.getItem('shoppingCartItems')));
+  }
+});
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('add-to-cart-button')) {
+    const productContainer = e.target.closest('.product-container');
+    const productName = productContainer.querySelector('.product-name').textContent;
+    const productPrice = productContainer.querySelector('.product-price').textContent;
+    const productId = productContainer.dataset.productId;
+
+    let shoppingCartItems = JSON.parse(localStorage.getItem('shoppingCartItems')) || [];
+    
+    shoppingCartItems.push({ 
+      id: productId,
+      name: productName, 
+      price: parseFloat(productPrice.replace('Rs', '').trim())
+    });
+    
+    localStorage.setItem('shoppingCartItems', JSON.stringify(shoppingCartItems));
+
+    updateCartInfo(shoppingCartItems);
+
+    console.log('Items in cart:', shoppingCartItems);
+  }
+});
+
+function updateCartInfo(cartItems) {
+  const cartQuantity = cartItems.length;
+  const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
+
+  document.querySelector('.cart-quantity').textContent = cartQuantity;
+  document.getElementById('info-cart').textContent = `My Cart(${cartQuantity})`;
+  document.querySelector('.cart-information .para p:last-child').textContent = `Rs ${cartTotal.toFixed(2)}`;
+}
 
 function displayFashionProducts(menuItems) {
   const productContainer = document.querySelector('.js-products-grid');
@@ -214,3 +270,23 @@ function attachQuantityControlListeners() {
     });
   });
 }
+function viewCart() {
+  const cartItems = JSON.parse(localStorage.getItem('shoppingCartItems')) || [];
+  let cartHTML = '<h2>Shopping Cart</h2>';
+  
+  if (cartItems.length === 0) {
+    cartHTML += '<p>Your cart is empty.</p>';
+  } else {
+    cartHTML += '<ul>';
+    cartItems.forEach(item => {
+      cartHTML += `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+    });
+    cartHTML += '</ul>';
+  }
+
+  // Assuming you have a div with id "cart-contents" to display the cart
+  document.getElementById('cart-contents').innerHTML = cartHTML;
+}
+
+// Add an event listener to your "View Cart" button or link
+document.getElementById('view-cart-button').addEventListener('click', viewCart);

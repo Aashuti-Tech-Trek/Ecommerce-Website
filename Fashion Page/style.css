@@ -396,6 +396,76 @@ body {
 .toggle-size-chart-btn:hover {
   background-color: var(--hover-color);
 }
+.cart-container {
+  position: relative;
+}
+
+.cart-information {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 250px; /* Adjust width as needed */
+  background-color: var(--secondary-color); /* Use your website's primary color */
+  color: var(--text-color);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transform: translateY(10px);
+  opacity: 3;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cart-container:hover .cart-information {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+.view-checkout{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.para{
+  display: flex;
+  justify-content:space-between;
+}
+.cart-container {
+  position: relative;
+}
+
+.cart-information {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.cart-container:hover .cart-information {
+  display: block;
+}
+
+.cart-numbers {
+  margin-bottom: 10px;
+}
+
+.view-checkout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.viewcart {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
