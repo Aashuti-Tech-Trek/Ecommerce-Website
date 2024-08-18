@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop by Fashion Category</title>
+    <link rel="stylesheet" href="css/fashion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/jQuery3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+<main>
+    <div class="filter-men-women">
+        <button class="all-btn filt" data-id="all">All</button>
+        <button class="men-btn filt" data-id="men">Men</button>
+        <button class="women-btn filt" data-id="women">Women</button>
+    </div>
+    <div class="sort-controls"><p>Sort By:</p>
+      <button class="sort-btn" data-sort="low-to-high">Price: Low to High</button>
+      <button class="sort-btn" data-sort="high-to-low">Price: High to Low</button>
+  </div>
+  <div class="size-chart-container">
+    <button class="toggle-size-chart-btn">Size Chart</button>
+    <div class="size-chart">
+      <div class="size-chart-men">
+        <h3>Men's Size Chart</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest (in)</th>
+              <th>Waist (in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S</td>
+              <td>34-36</td>
+              <td>28-30</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>38-40</td>
+              <td>32-34</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>42-44</td>
+              <td>36-38</td>
+            </tr>
+            <tr>
+              <td>XL</td>
+              <td>46-48</td>
+              <td>40-42</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div class="size-chart-women">
+        <h3>Women's Size Chart</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Bust (in)</th>
+              <th>Waist (in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S</td>
+              <td>32-34</td>
+              <td>24-26</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>36-38</td>
+              <td>28-30</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>40-42</td>
+              <td>32-34</td>
+            </tr>
+            <tr>
+              <td>XL</td>
+              <td>44-46</td>
+              <td>36-38</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+
+    <div class="products-grid js-products-grid">
+      <div class="product-container">
+        <div class="product-image-container">
+          <img class="product-image"
+            src="/productImages/kurtiAda.webp">
+        </div>
+        <div class="product-brand">
+          ADA 
+        </div>
+
+        <div class="product-name limit-text-to-2-lines">
+          Ada Women's Cotton Hand Embroidered Chikankari Short Kurti
+        </div>
+
+        <div class="product-rating-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="black" fill="none">
+                <path d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          <div class="product-rating-count link-primary">
+            87
+          </div>
+        </div>
+
+        <div class="product-price">
+          889
+        </div>
+
+        
+        <div class="product-spacer"></div>
+
+        <div class="added-to-cart">
+          <img src="images/icons/checkmark.png">
+          Added
+        </div>
+
+        <button class="add-to-cart-button button-primary">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="product-container">
+        <div class="product-image-container">
+          <img class="product-image"
+            src="/productImages/Coord Set.jpg">
+        </div>
+        <div class="product-brand">
+          BLACKSTEP 
+        </div>
+        <div class="product-name limit-text-to-2-lines">
+          Women's Cotton Blend T-shirt & Pyjama Ethnic Co Ord Set
+        </div>
+
+        <div class="product-rating-container">
+          <img class="product-rating-stars"
+            src="images/ratings/rating-40.png">
+          <div class="product-rating-count link-primary">
+            127
+          </div>
+        </div>
+
+        <div class="product-price">
+          759
+        </div>
+        <div class="product-spacer"></div>
+
+        <div class="added-to-cart">
+          <img src="images/icons/checkmark.png">
+          Added
+        </div>
+
+        <button class="add-to-cart-button button-primary">
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="product-container">
+        <div class="product-image-container">
+          <img class="product-image"
+            src="https://supersimple.dev/projects/amazon/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg">
+        </div>
+
+        <div class="product-name limit-text-to-2-lines">
+          Adults Plain Cotton T-Shirt - 2 Pack
+        </div>
+
+        <div class="product-rating-container">
+          <img class="product-rating-stars"
+            src="images/ratings/rating-45.png">
+          <div class="product-rating-count link-primary">
+            56
+          </div>
+        </div>
+
+        <div class="product-price">
+          $7.99
+        </div>
+
+        <div class="product-quantity-container">
+          <select>
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+
+        <div class="product-spacer"></div>
+
+        <div class="added-to-cart">
+          <img src="images/icons/checkmark.png">
+          Added
+        </div>
+
+        <button class="add-to-cart-button button-primary">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+      
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+    <script type="module" src="fashion.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FOOTER | E-COMMERCE WEBSITE BY TIHI</title>
+    <!-- EXTERNAL LINKS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+        }
+
+        footer {
+            padding: 50px 0 80px 0; /* Increase padding to create space for credits */
+            background-color: #2c3e50;
+            color: white;
+            position: relative;
+            box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+        }
+
+        #containerFooter {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 100px;
+            box-sizing: border-box;
+        }
+
+        #containerFooter h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            position: relative;
+            top: 0; /* Ensure all h2 elements align horizontally */
+        }
+
+        #collection, #webFooter {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        #containerFooter a {
+            color: white; /* Set link color to white */
+            text-decoration: none; /* Remove underline */
+            font-size: 14px; /* Set the link font size */
+            display: block;
+            margin-bottom: 10px; /* Add gap between links */
+            font-weight: normal; /* Ensure links are not bold */
+        }
+
+        #containerFooter a:hover {
+            color: lightslategray; /* Change color on hover */
+            text-decoration: underline; /* Optional: add underline on hover */
+        }
+
+        #credit {
+            text-align: center;
+            font-size: 14px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #2c3e50; /* Match the background color */
+            padding: 20px 0; /* Add padding to the credits section */
+            box-sizing: border-box;
+            white-space: nowrap; /* Ensure credits stay on one line */
+            border-top: 1px solid white; /* Add a border to separate credits from the rest */
+        }
+
+        #credit a {
+            color: white; /* Set link color to white */
+            text-decoration: none; /* Remove underline */
+        }
+
+        #credit a:hover {
+            color: lightslategray; /* Change color on hover */
+            text-decoration: underline; /* Optional: add underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <section>    
+            <div id="containerFooter">
+                <div id="collection">
+                    <h2>Shop Now</h2>
+                    <div id="Fashion"><a href="fashion.html">FASHION</a></div>
+                    <div id="Electronics"><a href="electronics.html">ELECTRONICS</a></div>
+                    <div id="Smartphones"><a href="smartphones.html">SMART PHONES & HEADPHONES</a></div>
+                    <div id="Grocery"><a href="grocery.html">GROCERY</a></div>
+                    <div id="Home Decor"><a href="homeDecor.html">HOME DECOR</a></div>
+                    <div id="toys"><a href="toys.html">TOYS</a></div>
+                    <div id="Cosmetics and Skincare"><a href="cosmetics.html">COSMETICS & SKINCARE</a></div>
+                    <div id="Books"><a href="books.html">BOOKS</a></div>
+                </div>
+                <div id="webFooter">
+                    <h2>Helpful link</h2>
+                    <div id="Home"><a href="index.html">HOME</a></div>
+                    <div id="About us"><a href="aboutUs.html">ABOUT US</a></div>
+                    <div id="Contact us"><a href="contactUs.html">CONTACT US</a></div>
+                </div>
+                <div id="webFooter">
+                    <h2>Partners</h2>
+                    <p>Zara</p>
+                    <p>Pantaloons</p>
+                    <p>Levis</p>
+                    <p>UCB</p>
+                    <p>+ many more</p>
+                </div>
+                <div id="webFooter">
+                    <h2>Address</h2>
+                    <p>Gangotri Hostel</p>
+                    <p>ABV IIITM</p>
+                    <p>Gwalior, MP,</p>
+                    <p>India</p>
+                    <p>Pincode:474015</p>
+                </div>
+            </div>
+            <div id="credit">
+                <a href="https://www.linkedin.com/in/aashuti-gambhir-339b55289">© Aashuti Gambhir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/in/paridhi-jain-969178297">@ Paridhi Jain</a>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
