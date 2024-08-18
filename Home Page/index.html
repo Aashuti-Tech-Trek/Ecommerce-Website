@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MegaMart - One Stop Platform for your shopping needs</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SHOPABILITY | BY TIHI</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <!-- Header links -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- Slider links -->
+    <script src="js/jQuery3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 </head>
-<body>
-    <header class="header">
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li class="nav-item logo-item"><img src="/bannerImages/megamart-logo.png" alt="MegaMart Logo" class="logo"></li>
-                <li class="nav-item"><a href="#">Home</a></li>
-                <li class="nav-item"><a href="#">About Us</a></li>
-                <li class="nav-item"><a href="#">Contact</a></li>
 
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+
+<<<<<<< HEAD
+    <!-- SLIDER -->
+    <div id="2"></div>
+
+    <!-- Category SECTION -->
+    <div id="3"></div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+
+    <script>
+        function load(url, elementId) {
+            const req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(elementId).innerHTML = req.responseText;
+        }
+
+        // Load different sections
+        load("header.html", "1");
+        load("slider.html", "2");
+        load("content.html", "3");
+        load("footer.html", "4");
+    </script>
+
+    <!-- Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#containerSlider').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000,
+            });
+        });
+    </script>
+
+    <!-- Content JS -->
+    <script src="content.js"></script>
+=======
                 <li class="nav-item search-container">
                     <input type="text" class="search-box" placeholder="Search products...">
                 </li>
@@ -46,5 +93,6 @@
     </footer>
     
     <script src="script.js"></script>
+>>>>>>> 9d97db2f4bf72d41ac4edeaeac25a3981a19e157
 </body>
 </html>
