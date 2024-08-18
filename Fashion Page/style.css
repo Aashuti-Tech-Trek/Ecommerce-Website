@@ -99,7 +99,6 @@ body {
   box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
 }
 
-/* Filters Section */
 .filter-men-women {
   display: flex;
   justify-content: center;
@@ -120,7 +119,7 @@ body {
 }
 
 .filt:hover {
-  background-color: var(--primary-color);
+  background-color: var(--hover-color);
   color: var(--light-text);
 }
 
@@ -129,8 +128,26 @@ body {
   color: var(--light-text);
   border-color: var(--accent-color);
 }
+.sort-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
 
-/* Grid Layout for Products */
+.sort-btn {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sort-btn:hover {
+  background-color: var(--hover-color);
+}
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -272,9 +289,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Adjust spacing between buttons and display */
+  gap: 10px;
   padding:10px;
-  margin-top: 10px; /* Optional: add some space above the quantity control */
+  margin-top: 10px;
 }
 
 .quantity-btn {
@@ -297,16 +314,56 @@ body {
   background-color: var(--accent-color);
 }
 
-.quantity-display {
-  font-size: 16px;
-  font-weight: bold;
+.size-chart-container {
+  position: relative;
+  margin-top: 20px;
+  padding: 9px;
+}
+
+.size-chart {
+  display: none;
+  padding: 15px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.size-chart h3 {
+  margin:9px;
+  padding:9px;
   color: var(--text-color);
 }
 
+.size-chart table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+.size-chart th, .size-chart td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--text-color);
+}
 
+.size-chart th {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+}
 
-/* Media Queries */
+.toggle-size-chart-btn {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.toggle-size-chart-btn:hover {
+  background-color: var(--hover-color);
+}
 @media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);

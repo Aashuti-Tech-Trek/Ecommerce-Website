@@ -1,5 +1,6 @@
 import { fashionProducts } from "./fashionProducts.js";
 const filterBtns = document.querySelectorAll(".filt");
+const sortBtns = document.querySelectorAll(".sort-btn");
 
 // Load items
 window.addEventListener('DOMContentLoaded', function () {
@@ -20,6 +21,27 @@ filterBtns.forEach(function (btn) {
     }
   });
 });
+
+// Sort items
+sortBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const sortType = e.currentTarget.dataset.sort;
+    let sortedProducts = [...fashionProducts];
+
+    if (sortType === 'low-to-high') {
+      sortedProducts.sort((a, b) => a.price - b.price);
+    } else if (sortType === 'high-to-low') {
+      sortedProducts.sort((a, b) => b.price - a.price);
+    }
+
+    displayFashionProducts(sortedProducts);
+  });
+});
+document.querySelector('.toggle-size-chart-btn').addEventListener('click', function() {
+  const sizeChart = document.querySelector('.size-chart');
+  sizeChart.style.display = sizeChart.style.display === 'none' || sizeChart.style.display === '' ? 'block' : 'none';
+});
+
 
 function displayFashionProducts(menuItems) {
   const productContainer = document.querySelector('.js-products-grid');
@@ -52,7 +74,7 @@ function displayFashionProducts(menuItems) {
             <button class="size-btn" data-size="L">L</button>
             <button class="size-btn" data-size="XL">XL</button>
           </div>
-          <div class="quantity-control">Qty :
+          <div class="quantity-control">
             <button class="quantity-btn minus">-</button>
             <span class="quantity-display">1</span>
             <button class="quantity-btn plus">+</button>
@@ -71,26 +93,8 @@ function displayFashionProducts(menuItems) {
   displayMenu = displayMenu.join("");
   productContainer.innerHTML = displayMenu;
 
-  // Attach event listeners after adding the content to the DOM
-  document.querySelectorAll('.quantity-control').forEach(control => {
-    const minusBtn = control.querySelector('.minus');
-    const plusBtn = control.querySelector('.plus');
-    const display = control.querySelector('.quantity-display');
-
-    let quantity = parseInt(display.textContent, 10); // Initialize quantity from display
-
-    minusBtn.addEventListener('click', () => {
-      if (quantity > 1) { // Prevent quantity from going below 1
-        quantity--;
-        display.textContent = quantity;
-      }
-    });
-
-    plusBtn.addEventListener('click', () => {
-      quantity++;
-      display.textContent = quantity;
-    });
-  });
+  // Attach quantity control listeners after rendering the products
+  attachQuantityControlListeners();
 }
 
 function renderColorOptions(colorOptions) {
@@ -122,16 +126,16 @@ function renderStars(stars) {
   }
   return starHTML;
 }
+
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('color-btn')) {
     const productContainer = e.target.closest('.product-container');
     const productImage = productContainer.querySelector('.product-image');
     
-    // Update active color button
     productContainer.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
     e.target.classList.add('active');
     
-    // Update product image
+
     productImage.src = e.target.dataset.image;
     
     // Optional: add a fade effect
@@ -143,6 +147,7 @@ document.addEventListener('click', function(e) {
     console.log('Color selected:', e.target.dataset.color);
   }
 });
+
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('size-btn')) {
     const productContainer = e.target.closest('.product-container');
@@ -154,10 +159,28 @@ document.addEventListener('click', function(e) {
     // Add 'active' class to the clicked button
     e.target.classList.add('active');
     
-    // You can add additional logic here, e.g., updating the product state
     console.log(`Selected size: ${e.target.dataset.size} for product ID: ${productContainer.dataset.productId}`);
   }
 });
 
+function attachQuantityControlListeners() {
+  document.querySelectorAll('.quantity-control').forEach(control => {
+    const minusBtn = control.querySelector('.minus');
+    const plusBtn = control.querySelector('.plus');
+    const display = control.querySelector('.quantity-display');
 
+    let quantity = parseInt(display.textContent, 10); // Initialize quantity from display
 
+    minusBtn.addEventListener('click', () => {
+      if (quantity > 1) { // Prevent quantity from going below 1
+        quantity--;
+        display.textContent = quantity;
+      }
+    });
+
+    plusBtn.addEventListener('click', () => {
+      quantity++;
+      display.textContent = quantity;
+    });
+  });
+}

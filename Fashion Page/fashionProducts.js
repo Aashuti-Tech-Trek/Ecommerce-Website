@@ -193,14 +193,38 @@ export const fashionProducts = [
     },
     {
         id:14,
-        image:'/productImages/menShirt.webp',
-        brand:'BELLSTONE',
-        name:'Bellstone Men Solid Cotton Blend Straight Kurta Shirt',
+        image:'/productImages/dungaree.jpg',
+        brand:'DEEBACO',
+        name:'Women\;s Relaxed Fit Cotton|Jumpsuits for Women Stylish Western|Coord Set for Women|Dungaree for Women',
         rating:{
             stars:5,
             count:300,
         },
-        price:489,
-        keywords:['men','multicolour shirt']
+        price:819,
+        keywords:['women','dungaree','jumpsuit']
+    },
+    {
+        id:15,
+        image:'/productImages/campusSutra.jpg',
+        brand:'Campus Sutra',
+        name:'Women Solid Red Dress with Open Back Detail for Casual Wear | Quarter Sleeve | Crepe Knee Length Dress',
+        rating:{
+            stars:3.3,
+            count:56,
+        },
+        price:999,
+        keywords:['women','casual','puff sleeve']
+    },
+    {
+        id:16,
+        image:'/productImages/menJeans.jpg',
+        brand:'DENIMLOOK',
+        name:'DENIMLOOK Men Relaxed Fit Mid Rise Baggy Light Blue Jeans',
+        rating:{
+            stars:3.2,
+            count:14,
+        },
+        price:819,
+        keywords:['men','denim','jeans']
     },
     ]
