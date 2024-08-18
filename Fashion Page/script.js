@@ -22,6 +22,7 @@ filterBtns.forEach(function (btn) {
   });
 });
 
+
 // Sort items
 sortBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -41,6 +42,34 @@ document.querySelector('.toggle-size-chart-btn').addEventListener('click', funct
   const sizeChart = document.querySelector('.size-chart');
   sizeChart.style.display = sizeChart.style.display === 'none' || sizeChart.style.display === '' ? 'block' : 'none';
 });
+// Initial cart quantity
+let cartQuantity = 0;
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Load the initial cart quantity (if needed)
+  updateCartQuantity(cartQuantity);
+});
+
+// Update the cart quantity display
+function updateCartQuantity(quantity) {
+  const cartQuantityDisplay = document.querySelector('.cart-quantity');
+  if (cartQuantityDisplay) {
+    cartQuantityDisplay.textContent = quantity;
+  }
+}
+
+// Handle "Add to Cart" button clicks
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('add-to-cart-button')) {
+    cartQuantity++;
+    updateCartQuantity(cartQuantity);
+    e.target.nextElementSibling.style.display = 'block'; // Show "Added to cart" text
+    setTimeout(() => {
+      e.target.nextElementSibling.style.display = 'none'; // Hide after a short delay
+    }, 1500);
+  }
+});
+
 
 
 function displayFashionProducts(menuItems) {
@@ -85,7 +114,8 @@ function displayFashionProducts(menuItems) {
           <img src="images/icons/checkmark.png">
           Added
         </div>
-        <button class="add-to-cart-button button-primary">Add to Cart</button>
+        <button class="add-to-cart-button">Add to Cart</button>
+          <div class="added-to-cart">Added to Cart</div>
       </div>
     `;
   });
